@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:time_capsule/db_capsule/db_capsule.dart';
 import 'package:time_capsule/pages/capsule_add/capsule_add_binding.dart';
 import 'package:time_capsule/pages/capsule_add/capsule_add_view.dart';
+import 'package:time_capsule/pages/capsule_complete/capsule_complete_binding.dart';
+import 'package:time_capsule/pages/capsule_complete/capsule_complete_view.dart';
+import 'package:time_capsule/pages/capsule_first/capsule_check_fin.dart';
 import 'package:time_capsule/pages/capsule_first/capsule_first_binding.dart';
 import 'package:time_capsule/pages/capsule_first/capsule_first_view.dart';
 import 'package:time_capsule/pages/capsule_list/capsule_list_binding.dart';
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Times,
-      initialRoute: '/capsuleTab',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -83,8 +86,10 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Times = [
+  GetPage(name: '/', page: () => const CapsuleCompleteView(), binding: CapsuleCompleteBinding()),
   GetPage(name: '/noNetwork', page: () => NoNetworkPage(), binding: NoNetworkBinding()),
-  GetPage(name: '/capsuleTab', page: () => CapsuleTabPage(), binding: CapsuleTabBinding()),
+  GetPage(name: '/capsuleTab', page: () => const CapsuleTabPage(), binding: CapsuleTabBinding()),
+  GetPage(name: '/capsuleFin', page: () => const CapsuleCheckFin()),
   GetPage(name: '/capsuleSecond', page: () => CapsuleSecondPage(), binding: CapsuleSecondBinding()),
   GetPage(name: '/capsuleList', page: () => CapsuleListPage(), binding: CapsuleListBinding()),
   GetPage(name: '/capsuleFirst', page: () => CapsuleFirstPage(), binding: CapsuleFirstBinding()),

@@ -11,8 +11,8 @@ class CapsuleCompleteView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.rempel.value
-              ? const CircularProgressIndicator(color: Colors.blue)
+          () => controller.oberbrunner.value
+              ? const CircularProgressIndicator(color: Colors.orange)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class CapsuleCompleteView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.orxnbgh();
+              controller.opbdve();
             },
             icon: const Icon(
               Icons.restart_alt,
